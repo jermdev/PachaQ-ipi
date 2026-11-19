@@ -1,0 +1,212 @@
+.view-estados,
+.view-estados * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.view-estados {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-family);
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.view-estados__container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100%;
+  padding: 40px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Contenido superior */
+.view-estados__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Círculo verde con check */
+.view-estados__check-badge {
+  width: 112px;
+  height: 112px;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-estados__check-icon {
+  width: 56px;
+  height: 56px;
+  color: var(--white);
+}
+
+/* Título principal */
+.view-estados__header {
+  width: 100%;
+  text-align: center;
+}
+
+.view-estados__title {
+  color: var(--earth-dark);
+  font-size: clamp(1.5rem, 7vw, 1.75rem); /* Fluido hasta 28px */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Tarjeta de confirmación GPS */
+.view-estados__alert {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--green-tint);
+  border: 1px solid var(--green);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-estados__alert-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.view-estados__alert-text {
+  color: var(--ink);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+/* Lista de familiares */
+.view-estados__family-list {
+  list-style: none;
+  width: 100%;
+  padding: 4px 16px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-estados__member {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-estados__member + .view-estados__member {
+  border-top: 1px solid var(--border);
+}
+
+.view-estados__avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--earth-tint);
+  border: 2px solid var(--earth);
+  border-radius: 50%;
+  color: var(--earth);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.view-estados__member-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.view-estados__member-name {
+  color: var(--ink);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.view-estados__member-meta {
+  color: var(--muted);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* Badges de estado */
+.view-estados__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.view-estados__status--received {
+  background-color: var(--green-tint);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.view-estados__status--unread {
+  background-color: var(--orange-tint);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+.view-estados__status-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Botón inferior */
+.view-estados__footer {
+  width: 100%;
+}
+
+.view-estados__cta {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background-color: var(--earth);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 12px;
+  font-family: var(--font-family);
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.view-estados__cta:active {
+  transform: scale(0.98);
+  opacity: 0.92;
+}

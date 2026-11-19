@@ -1,0 +1,231 @@
+.view-rescate,
+.view-rescate * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.view-rescate {
+  background-color: var(--red);
+  color: var(--white);
+  font-family: var(--font-family);
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.view-rescate__container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100%;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Contenido principal */
+.view-rescate__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Baliza SOS concéntrica */
+.view-rescate__beacon {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.view-rescate__ring {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.view-rescate__ring--outer {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.view-rescate__ring--middle {
+  width: 76%;
+  height: 76%;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.view-rescate__ring--inner {
+  width: 54%;
+  height: 54%;
+  border-color: rgba(255, 255, 255, 0.50);
+}
+
+.view-rescate__sos-core {
+  width: 94px;
+  height: 94px;
+  background-color: var(--red-deep);
+  border: 6px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Textos principales */
+.view-rescate__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.view-rescate__title {
+  font-size: clamp(1.5rem, 7vw, 1.75rem); /* Fluido hasta 28px */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.view-rescate__subtitle {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 34ch;
+}
+
+/* Píldoras de estado */
+.view-rescate__pills {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.view-rescate__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Tarjeta de contacto a emergencias */
+.view-rescate__emergency-card {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--red-deep);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.view-rescate__emergency-label {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.view-rescate__emergency-status {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.view-rescate__call-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.view-rescate__call-btn {
+  height: 44px;
+  padding: 0 12px;
+  background-color: var(--white);
+  color: var(--red);
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.view-rescate__call-btn:active {
+  transform: scale(0.97);
+  opacity: 0.92;
+}
+
+/* Estado de batería */
+.view-rescate__battery-status {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0.95;
+}
+
+/* Botón inferior contorno blanco */
+.view-rescate__footer {
+  width: 100%;
+}
+
+.view-rescate__deactivate-btn {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border: 2px solid var(--white);
+  border-radius: 12px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.view-rescate__deactivate-btn:active {
+  background-color: rgba(255, 255, 255, 0.14);
+  transform: scale(0.98);
+}
+
+/* Iconos */
+.view-rescate__icon-sm {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}

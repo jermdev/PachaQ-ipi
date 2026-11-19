@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="../CSS/styles.css">
+<link rel="stylesheet" href="../CSS/evaluacion_guiada_voz.css">
+
+<section class="view-evacuacion" aria-label="Evacuación guiada">
+  <div class="view-evacuacion__container">
+    
+    <!-- Barra superior de navegación de la vista -->
+    <header class="view-evacuacion__topbar">
+      <a href="#atras" data-route="back" class="view-evacuacion__back-btn" aria-label="Volver atrás">
+        <svg class="view-evacuacion__back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h2 class="view-evacuacion__topbar-title">Evacuación guiada</h2>
+    </header>
+
+    <!-- Cuerpo principal de la guía -->
+    <div class="view-evacuacion__body">
+      
+      <!-- Indicador de progreso (4 pasos) -->
+      <div class="view-evacuacion__progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4" aria-label="Paso 1 de 4">
+        <span class="view-evacuacion__progress-step view-evacuacion__progress-step--active"></span>
+        <span class="view-evacuacion__progress-step"></span>
+        <span class="view-evacuacion__progress-step"></span>
+        <span class="view-evacuacion__progress-step"></span>
+      </div>
+
+      <p class="view-evacuacion__step-label">PASO 1 DE 4</p>
+
+      <!-- Número de paso destacado -->
+      <div class="view-evacuacion__step-badge" aria-hidden="true">1</div>
+
+      <!-- Instrucción principal -->
+      <h3 class="view-evacuacion__title">Mantén la calma y guía a María</h3>
+
+      <!-- Tarjeta de dictado por voz -->
+      <article class="view-evacuacion__voice-card" aria-live="polite">
+        <header class="view-evacuacion__voice-header">
+          <svg class="view-evacuacion__speaker-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+          </svg>
+          <span class="view-evacuacion__voice-label">DICTADO POR VOZ</span>
+          
+          <!-- Ondas de audio activas -->
+          <div class="view-evacuacion__equalizer" aria-hidden="true">
+            <span class="view-evacuacion__bar view-evacuacion__bar--1"></span>
+            <span class="view-evacuacion__bar view-evacuacion__bar--2"></span>
+            <span class="view-evacuacion__bar view-evacuacion__bar--3"></span>
+            <span class="view-evacuacion__bar view-evacuacion__bar--4"></span>
+            <span class="view-evacuacion__bar view-evacuacion__bar--5"></span>
+            <span class="view-evacuacion__bar view-evacuacion__bar--6"></span>
+          </div>
+        </header>
+
+        <blockquote class="view-evacuacion__quote">
+          "Toma el bastón de María y ayúdala a desplazarse a la columna central."
+        </blockquote>
+      </article>
+
+      <!-- Acciones de navegación y audio -->
+      <div class="view-evacuacion__actions">
+        <a href="#evacuacion-paso-2" data-route="evacuacion-paso-2" class="view-evacuacion__btn view-evacuacion__btn--primary">
+          <span>Siguiente paso</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <button type="button" class="view-evacuacion__btn view-evacuacion__btn--secondary" data-action="repeat-voice">
+          Repetir indicación de voz
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>

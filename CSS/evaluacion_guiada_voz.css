@@ -1,0 +1,229 @@
+.view-evacuacion,
+.view-evacuacion * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.view-evacuacion {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-family);
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.view-evacuacion__container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra superior marrón */
+.view-evacuacion__topbar {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background-color: var(--earth);
+  color: var(--canvas);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.view-evacuacion__back-btn {
+  width: 32px;
+  height: 32px;
+  color: var(--canvas);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: opacity 0.15s ease;
+}
+
+.view-evacuacion__back-btn:active {
+  opacity: 0.75;
+}
+
+.view-evacuacion__back-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.view-evacuacion__topbar-title {
+  font-size: 1.375rem; /* 22px */
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Contenido principal */
+.view-evacuacion__body {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Barra de progreso segmentada */
+.view-evacuacion__progress {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+}
+
+.view-evacuacion__progress-step {
+  flex: 1;
+  height: 6px;
+  background-color: var(--border);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.view-evacuacion__progress-step--active {
+  background-color: var(--earth);
+}
+
+.view-evacuacion__step-label {
+  color: var(--muted);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Círculo con el número de paso */
+.view-evacuacion__step-badge {
+  width: 96px;
+  height: 96px;
+  background-color: var(--earth);
+  color: var(--canvas);
+  border-radius: 50%;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título del paso */
+.view-evacuacion__title {
+  color: var(--earth-dark);
+  font-size: clamp(1.5rem, 7vw, 1.75rem); /* Fluido hasta 28px */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Tarjeta de dictado por voz */
+.view-evacuacion__voice-card {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--earth-tint);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.view-evacuacion__voice-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-evacuacion__speaker-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--earth);
+  flex-shrink: 0;
+}
+
+.view-evacuacion__voice-label {
+  flex: 1;
+  color: var(--earth);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Ecualizador verde */
+.view-evacuacion__equalizer {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 24px;
+}
+
+.view-evacuacion__bar {
+  width: 4px;
+  background-color: var(--green);
+  border-radius: 2px;
+}
+
+.view-evacuacion__bar--1 { height: 8px; }
+.view-evacuacion__bar--2 { height: 16px; }
+.view-evacuacion__bar--3 { height: 24px; }
+.view-evacuacion__bar--4 { height: 14px; }
+.view-evacuacion__bar--5 { height: 20px; }
+.view-evacuacion__bar--6 { height: 10px; }
+
+.view-evacuacion__quote {
+  color: var(--ink);
+  font-size: clamp(1.25rem, 5.5vw, 1.375rem); /* Fluido hasta 22px */
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Contenedor de botones */
+.view-evacuacion__actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.view-evacuacion__btn {
+  width: 100%;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-family: var(--font-family);
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.view-evacuacion__btn:active {
+  transform: scale(0.98);
+  opacity: 0.92;
+}
+
+.view-evacuacion__btn--primary {
+  height: 56px;
+  background-color: var(--earth);
+  color: var(--white);
+  border: none;
+}
+
+.view-evacuacion__btn--secondary {
+  height: 48px;
+  background-color: var(--white);
+  color: var(--earth);
+  border: 1.5px solid var(--earth);
+}
