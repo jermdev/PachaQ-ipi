@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · PachaQ'ipi</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body data-root="../" data-page="contacto">
+  <div id="site-header"></div>
+
+  <main class="section" style="padding-top:44px">
+    <div class="container">
+      <span class="chip">Contacto</span>
+      <h1 style="font-size:24px;margin:14px 0 6px;color:var(--brown)">Cuéntanos qué necesitas</h1>
+      <p style="font-weight:700;max-width:520px;margin-bottom:20px">Déjanos tus datos y te orientamos sobre PachaQ'ipi y el plan de preparación para tu familia. Todos los campos son obligatorios.</p>
+
+      <form class="form-card" id="contact-form" novalidate>
+        <div class="group"><label for="nombre">Nombre completo (obligatorio)</label>
+          <input class="input" id="nombre" name="nombre" type="text" autocomplete="name"><div class="err-msg" id="err-nombre"></div></div>
+        <div class="group"><label for="correo">Correo electrónico (obligatorio)</label>
+          <input class="input" id="correo" name="correo" type="email" autocomplete="email"><div class="err-msg" id="err-correo"></div></div>
+        <div class="group"><label for="celular">Celular (obligatorio)</label>
+          <input class="input" id="celular" name="celular" type="tel" inputmode="numeric" placeholder="9XXXXXXXX" autocomplete="tel"><div class="err-msg" id="err-celular"></div></div>
+        <div class="group"><label for="distrito">Distrito de residencia (obligatorio)</label>
+          <input class="input" id="distrito" name="distrito" type="text"><div class="err-msg" id="err-distrito"></div></div>
+        <div class="group"><label for="perfil">Perfil de usuario (obligatorio)</label>
+          <select class="select" id="perfil" name="perfil">
+            <option value="">Selecciona una opción</option>
+            <option>Jefe/a de hogar</option><option>Adulto mayor</option>
+            <option>Cuidador/a de persona con movilidad reducida</option><option>Estudiante</option><option>Otro</option>
+          </select><div class="err-msg" id="err-perfil"></div></div>
+        <button class="btn btn-dark" type="submit">Enviar solicitud</button>
+        <div id="form-msg" role="status" aria-live="polite" style="margin-top:14px"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../JS/main.js"></script>
+</body>
+</html>

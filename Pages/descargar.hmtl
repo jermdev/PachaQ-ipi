@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descargar · PachaQ'ipi</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body data-root="../" data-page="descargar">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="chip"><i data-ic="download" data-size="12"></i> Descarga oficial</span>
+          <h1 style="font-size:clamp(30px,4.4vw,42px)">Descarga PachaQ'ipi en tu Smartphone</h1>
+          <p class="lead">Prepara a tu familia desde hoy. Gratis, en español y con todo disponible sin internet.</p>
+          <a class="store-btn" href="#"><i data-ic="play" data-size="26"></i><span><small>Disponible en</small><b>Google Play (Android)</b></span></a>
+          <a class="store-btn" href="#"><i data-ic="phone" data-size="26"></i><span><small>Descárgalo en</small><b>App Store (iOS)</b></span></a>
+          <div class="qr-card">
+            <!-- Reemplaza este QR por tu imagen real: assets/qr.png -->
+            <svg width="96" height="96" viewBox="0 0 21 21" shape-rendering="crispEdges" aria-label="Código QR de ejemplo">
+              <rect width="21" height="21" fill="#fff"/>
+              <g fill="#2a1a12">
+                <path d="M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0z"/>
+              </g>
+              <g fill="#fff"><path d="M1 1h5v5H1zM15 1h5v5h-5zM1 15h5v5H1z"/></g>
+              <g fill="#2a1a12"><path d="M2 2h3v3H2zM16 2h3v3h-3zM2 16h3v3H2zM9 1h2v2H9zM8 4h3v1H8zM9 7h1v3H9zM11 9h3v2h-3zM8 12h2v2H8zM12 13h3v2h-3zM16 11h3v2h-3zM10 16h2v3h-2zM14 17h2v3h-2zM18 15h3v2h-3zM17 19h3v2h-3z"/></g>
+            </svg>
+            <div><b style="font-size:17px">Escanea con tu cámara</b><p style="font-size:13px;color:var(--muted)">Abre la tienda correcta desde tu celular.</p></div>
+          </div>
+        </div>
+        <div class="hero-phone" data-phone></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../JS/main.js"></script>
+</body>
+</html>
