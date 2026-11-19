@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PachaQ'ipi · Preparación inteligente ante terremotos</title>
+  <meta name="description" content="Evalúa tu hogar con IA, crea planes de evacuación a medida y conecta con tu familia aún sin internet.">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    
+<body data-root="" data-page="inicio">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="chip"><i data-ic="sparkle" data-size="12"></i> Prevención sísmica con IA</span>
+          <h1>Preparación Inteligente Familiar ante Terremotos</h1>
+          <p class="lead">Evalúa tu hogar con IA, crea planes de evacuación a medida y conecta con tu familia aún sin internet.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="Pages/contacto.html">Pre-registrar mi Hogar</a>
+            <a class="btn btn-outline" href="Pages/descargar.html">Descargar App</a>
+          </div>
+          <div class="checks">
+            <span><i data-ic="check" data-size="14"></i> Funciona sin internet</span>
+            <span><i data-ic="check" data-size="14"></i> Alertas por voz</span>
+            <span><i data-ic="check" data-size="14"></i> IA para tu hogar</span>
+          </div>
+        </div>
+        <div class="hero-phone" data-phone></div>
+      </div>
+    </section>
+
+    <section class="section white center">
+      <div class="container">
+        <span class="chip">Cómo funciona</span>
+        <h2>Tu hogar listo en tres pasos</h2>
+        <div class="grid-3" style="text-align:left">
+          <article class="card">
+            <div class="step-head"><span class="icon-box"><i data-ic="sparkle"></i></span> PASO 1</div>
+            <h3>Evalúa tu hogar</h3>
+            <p>Responde 4 pasos sobre materiales, pisos y entorno. La IA calcula tu nivel de riesgo.</p>
+          </article>
+          <article class="card">
+            <div class="step-head"><span class="icon-box"><i data-ic="file"></i></span> PASO 2</div>
+            <h3>Recibe tu plan</h3>
+            <p>Obtén un plan de Antes, Durante y Después adaptado a cada integrante.</p>
+          </article>
+          <article class="card">
+            <div class="step-head"><span class="icon-box"><i data-ic="users"></i></span> PASO 3</div>
+            <h3>Conecta a tu familia</h3>
+            <p>Reporta tu estado y ubica a los tuyos incluso sin conexión.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div>
+          <h3>Suscríbete al boletín preventivo</h3>
+          <p style="font-size:14px;opacity:.85">Recibe consejos semanales de seguridad</p>
+        </div>
+        <form id="newsletter-form" novalidate>
+          <div class="field-box"><label for="nl-email">CORREO</label><input id="nl-email" type="email" placeholder="tu@email.com"></div>
+          <button class="btn btn-light" type="submit">Suscribirse</button>
+        </form>
+        <p class="nl-msg" id="nl-msg" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="JS/main.js"></script>
 </body>
 </html>
