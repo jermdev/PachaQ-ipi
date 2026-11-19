@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios · PachaQ'ipi</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body data-root="../" data-page="servicios">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="chip">Servicios</span>
+        <h1>Servicios y Funcionalidades</h1>
+        <p>Los tres pilares tecnológicos que protegen a tu familia antes, durante y después de un sismo.</p>
+        <div class="grid-3" style="margin-top:28px">
+          <article class="card white"><span class="icon-box soft"><i data-ic="sparkle"></i></span><h3>Diagnóstico IA del Hogar</h3><p>Analiza materiales de construcción y riesgos estructurales para personalizar tu plan.</p><a class="more-link" href="#demo-ubicacion">Conocer más <i data-ic="arrow" data-size="14"></i></a></article>
+          <article class="card white"><span class="icon-box soft"><i data-ic="wifioff"></i></span><h3>Modo Offline Garantizado</h3><p>Accede a mapas y planes sin consumo de datos ni señal.</p><a class="more-link" href="#demo-ubicacion">Conocer más <i data-ic="arrow" data-size="14"></i></a></article>
+          <article class="card white"><span class="icon-box soft"><i data-ic="bell"></i></span><h3>Alerta Temprana Multimodal</h3><p>Alertas audibles y por voz adaptadas a adultos mayores.</p><a class="more-link" href="#demo-mapa">Conocer más <i data-ic="arrow" data-size="14"></i></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" style="padding:36px 0">
+      <div class="container">
+        <h3 style="font-size:20px;margin-bottom:16px">Y mucho más</h3>
+        <div class="grid-4">
+          <div class="mini-card"><i data-ic="shield"></i><b>Zonas seguras</b>Marca refugios internos y externos.</div>
+          <div class="mini-card"><i data-ic="bag"></i><b>Mochila de emergencia</b>Checklist con fechas de vencimiento.</div>
+          <div class="mini-card"><i data-ic="users"></i><b>Red vecinal</b>Padrinos de evacuación y recursos.</div>
+          <div class="mini-card"><i data-ic="trophy"></i><b>Simulacros</b>Entrena con escenarios y XP.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Demos interactivas ===== -->
+    <div class="container">
+      <section class="page-head" style="padding-bottom:0">
+        <span class="chip">Pruébalo</span>
+        <h1 style="font-size:28px">Demos interactivas de la aplicación</h1>
+        <p style="font-size:15px">Así se verá PachaQ'ipi en tu teléfono. Todos los datos son simulados.</p>
+      </section>
+
+      <!-- HU-018 -->
+      <section class="demo" id="demo-ubicacion">
+        <span class="hu-tag">HU-018</span>
+        <h2>Avisa dónde estás aunque se caiga la red</h2>
+        <p class="intro">Cuando hay un sismo, la app guarda tu última ubicación y se la envía a tu familia. Si no hay señal, queda en el teléfono y sale sola cuando vuelva la conexión.</p>
+        <div class="demo-grid">
+          <div class="panel">
+            <label class="check"><input type="checkbox" id="ubi-emerg"> Ubicación temporal de emergencia activada</label>
+            <label class="check"><input type="checkbox" id="ubi-senal"> Tengo señal (desmárcalo para simular la caída de red)</label>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="btn-sismo" type="button">Simular sismo</button>
+              <button class="btn btn-outline" id="btn-salvo" type="button">Marcar «Estoy a salvo»</button>
+            </div>
+            <div id="ubi-aviso" role="status" aria-live="polite"></div>
+          </div>
+          <div class="panel">
+            <h4>Bandeja de salida</h4>
+            <p id="ubi-bandeja"></p>
+            <h4>Lo que ve tu familia</h4>
+            <div id="ubi-familia"></div>
+            <p class="note">Demo con coordenadas simuladas: no usa tu ubicación real.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HU-020 -->
+      <section class="demo" id="demo-mapa">
+        <span class="hu-tag">HU-020</span>
+        <h2>Mapa de Reunificación familiar</h2>
+        <p class="intro">Después de un sismo, mira en un solo mapa dónde está cada integrante y quién ya confirmó que está a salvo. La ubicación se comparte solo de forma temporal.</p>
+        <div class="map" id="map-familia"></div>
+        <div class="legend"><span><i style="background:#2f7d32"></i>A salvo</span><span><i style="background:#e55a0c"></i>Sin confirmar</span><span><i style="background:#d13438"></i>Requiere auxilio</span></div>
+        <div class="demo-grid" style="margin-top:18px">
+          <div class="panel" id="fam-list"></div>
+          <div class="panel" style="background:var(--sand);border-left:5px solid var(--brown)">
+            <div id="fam-info"></div>
+            <div class="btn-row"><button class="btn btn-outline btn-sm" id="btn-ciclar" type="button">Cambiar estado del integrante</button></div>
+            <p class="note">Toca un integrante (lista o mapa) para ver su detalle.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HU-021 -->
+      <section class="demo" id="demo-encuentro">
+        <span class="hu-tag">HU-021</span>
+        <h2>Elige dónde reunirse con tu familia</h2>
+        <p class="intro">PachaQ'ipi compara dónde está cada integrante y sugiere un punto de encuentro principal y uno alternativo, lejos de laderas y de la zona de tsunami.</p>
+        <div class="map" id="map-encuentro"></div>
+        <div class="demo-grid" style="margin-top:18px">
+          <div class="panel">
+            <h4>Integrantes que se incluyen en el cálculo</h4>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px">
+              <label class="check" style="margin:0"><input type="checkbox" name="integ" value="papa" checked> Papá</label>
+              <label class="check" style="margin:0"><input type="checkbox" name="integ" value="mama" checked> Mamá</label>
+              <label class="check" style="margin:0"><input type="checkbox" name="integ" value="diego" checked> Diego</label>
+              <label class="check" style="margin:0"><input type="checkbox" name="integ" value="abuela" checked> Abuela</label>
+            </div>
+            <button class="btn btn-primary btn-sm" id="btn-recomendar" type="button">Recomendar puntos de encuentro seguros</button>
+            <div id="enc-result" style="margin-top:14px"></div>
+          </div>
+          <div class="panel">
+            <label class="check"><input type="checkbox" id="enc-bloq"> El punto principal está bloqueado</label>
+            <button class="btn btn-outline btn-sm" id="btn-intermedio" type="button">Sugerir punto de reunión intermedio</button>
+            <div id="enc-side" style="margin-top:12px" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HU-022 -->
+      <section class="demo" id="demo-ruta">
+        <span class="hu-tag">HU-022</span>
+        <h2>Ruta segura para volver a casa</h2>
+        <p class="intro">Calcula cuánto tardarás en llegar a pie y por dónde ir. Priorizamos avenidas anchas y te avisamos si hay puentes, laderas o calles estrechas.</p>
+        <div class="map" id="map-ruta"></div>
+        <div class="panel" style="max-width:520px;margin:18px auto 0">
+          <h4>¿Quién regresa?</h4>
+          <select class="select" id="ruta-quien">
+            <option value="papa">Papá (Trabajo)</option><option value="mama">Mamá (Mercado)</option>
+            <option value="diego">Diego (Universidad)</option><option value="abuela">Abuela (Casa)</option>
+          </select>
+          <h4 style="margin-top:14px">¿Hacia dónde?</h4>
+          <select class="select" id="ruta-dest">
+            <option value="casa">Casa</option><option value="colegio">Colegio</option><option value="estadio">Estadio municipal</option>
+          </select>
+          <label class="check" style="margin-top:12px"><input type="checkbox" id="ruta-mov"> Va con una persona de movilidad reducida</label>
+          <button class="btn btn-primary btn-sm" id="btn-ruta" type="button">Calcular ruta segura a casa</button>
+          <div id="ruta-out" style="margin-top:14px" role="status" aria-live="polite"></div>
+          <button class="btn btn-outline btn-sm" id="btn-compartir" type="button" style="margin-top:12px">Compartir tiempo estimado con mi familia</button>
+          <div id="ruta-share"></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container">
+        <div class="cta-band">
+          <div><h3>Evalúa tu hogar con IA en minutos</h3><p>Pre-registra tu hogar y recibe tu plan personalizado.</p></div>
+          <a class="btn btn-light" href="contacto.html">Pre-registrar mi Hogar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../JS/main.js"></script>
+</body>
+</html>
