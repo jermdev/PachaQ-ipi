@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi perfil · PachaQ'ipi</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body data-root="../" data-page="perfil">
+  <div id="site-header"></div>
+
+  <main class="container profile-layout">
+    <aside class="side">
+      <div class="av-lg">JQ</div>
+      <h3 style="font-size:19px">Joquer Querales</h3>
+      <small>joquer@email.com</small>
+      <hr>
+      <button class="active" type="button"><i data-ic="pin"></i> Historial de Ubicaciones</button>
+      <button type="button" data-plan><i data-ic="file"></i> Descargar Plan (PDF)</button>
+      <button type="button" id="btn-logout"><i data-ic="logout"></i> Cerrar Sesión</button>
+    </aside>
+
+    <section>
+      <h2 style="font-size:22px;margin-bottom:14px">Historial Reciente de Ubicaciones Familiares</h2>
+      <div class="map" id="perfil-mapa" style="max-height:150px"></div>
+      <div class="loc-list" id="perfil-hist"></div>
+      <div class="cta-band">
+        <div><h3>Plan de emergencia familiar</h3><p>Actualizado hoy, 9:48 · Disponible sin internet</p></div>
+        <button class="btn btn-light" type="button" data-plan>Descargar Plan (PDF)</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contenido que se imprime / guarda como PDF -->
+  <div id="plan-print">
+    <h1>Plan de emergencia familiar · Familia Querales</h1>
+    <h3>ANTES</h3><p>Asegurar muebles altos, completar la mochila de emergencia y revisar las zonas seguras.</p>
+    <h3>DURANTE</h3><p>Agacharse, cubrirse y sujetarse. Alejarse de ventanas. No usar ascensores.</p>
+    <h3>DESPUÉS</h3><p>Marcar «Estoy a salvo» en la app y dirigirse al punto de encuentro: Losa deportiva del colegio.</p>
+    <p><small>PachaQ'ipi · Kawsay Startup</small></p>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../JS/main.js"></script>
+</body>
+</html>
