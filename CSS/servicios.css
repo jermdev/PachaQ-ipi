@@ -1,1 +1,57 @@
 
+/* ===== PachaQ'ipi · estilos de la página Servicios ===== */
+
+.service, .demo { scroll-margin-top: 76px; }
+
+/* Bloque de servicio: texto a la izquierda, demo a la derecha */
+.service { padding: 68px 0; }
+.service.alt { background: #fff; }
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.service-text h2 { font-size: clamp(24px, 3vw, 31px); color: var(--brown-dark); margin: 16px 0 12px; }
+.service-text > p { font-size: 16px; color: var(--muted); max-width: 470px; }
+.ticks { list-style: none; margin: 20px 0 0; display: grid; gap: 12px; }
+.ticks li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.ticks i { color: var(--green); margin-top: 3px; flex: none; }
+
+/* Paneles dentro de fondo blanco: se tiñen de crema para mantener contraste */
+.service.alt .panel, .panel.soft { background: var(--cream); }
+.service.alt .select, .service.alt .alert { background: #fff; }
+.panel.soft .alert { background: #fff; }
+.panel .demo-label { font-size: 12px; font-weight: 500; letter-spacing: .4px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 16px 0; }
+
+/* Diagnóstico */
+.diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+#diag-out { margin-top: 16px; }
+.risk-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.risk-head b { font-size: 17px; }
+.risk-level { font-weight: 700; }
+.risk-level.bajo { color: var(--green); } .risk-level.medio { color: var(--orange); } .risk-level.alto { color: var(--red); }
+.meter { height: 8px; background: #e6dccd; border-radius: 99px; overflow: hidden; }
+.meter span { display: block; height: 100%; border-radius: 99px; transition: width .4s; }
+.meter span.bajo { background: var(--green); } .meter span.medio { background: var(--orange); } .meter span.alto { background: var(--red); }
+.recs { margin: 14px 0 8px 18px; font-size: 14px; display: grid; gap: 6px; }
+
+/* Alerta por voz */
+#al-out { margin-top: 6px; }
+.alarm { background: var(--red); color: #fff; border-radius: 14px; padding: 22px 20px; text-align: center; display: grid; gap: 8px; }
+.alarm strong { font-size: 30px; letter-spacing: 1px; }
+.alarm span { font-size: 16px; line-height: 1.4; }
+.alarm.big strong { font-size: 46px; }
+.alarm.big span { font-size: 24px; font-weight: 500; }
+
+/* Y mucho más */
+.more-section { padding: 52px 0; }
+.more-section h3 { font-size: 20px; color: var(--brown-dark); margin-bottom: 16px; }
+.more-section .mini-card { background: #fff; }
+.more-section .more-link { color: var(--brown); margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .service { padding: 48px 0; }
+  .service-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 520px) {
+  .diag-grid { grid-template-columns: 1fr; }
+}
