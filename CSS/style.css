@@ -246,3 +246,4 @@ a { color: inherit; text-decoration: none; }
   #plan-print, #plan-print * { visibility: visible; }
   #plan-print { display: block; position: absolute; inset: 0; padding: 30px; color: #000; background: #fff; }
 }
+textarea.input { resize: vertical; min-height: 96px; }
