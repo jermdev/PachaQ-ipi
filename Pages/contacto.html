@@ -27,9 +27,11 @@
         <div class="group"><label for="perfil">Perfil de usuario (obligatorio)</label>
           <select class="select" id="perfil" name="perfil">
             <option value="">Selecciona una opción</option>
-            <option>Jefe/a de hogar</option><option>Adulto mayor</option>
-            <option>Cuidador/a de persona con movilidad reducida</option><option>Estudiante</option><option>Otro</option>
+            <option>Jefe de hogar</option><option>Joven universitario</option>
+            <option>Familiar de adulto mayor</option>
           </select><div class="err-msg" id="err-perfil"></div></div>
+        <div class="group"><label for="mensaje">Mensaje o consulta (obligatorio)</label>
+          <textarea class="input" id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas saber sobre PachaQ'ipi"></textarea><div class="err-msg" id="err-mensaje"></div></div>
         <button class="btn btn-dark" type="submit">Enviar solicitud</button>
         <div id="form-msg" role="status" aria-live="polite" style="margin-top:14px"></div>
       </form>
