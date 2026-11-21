@@ -114,20 +114,16 @@
     const members = o.members || [];
     const colorOf = s => s === 'ok' ? '#2f7d32' : s === 'danger' ? '#d13438' : '#e55a0c';
     let s = `<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de la zona">
-      <rect width="800" height="300" fill="#ede5d8"/>
-      <g fill="#fff">
-        <rect x="0" y="168" width="800" height="16"/><rect x="0" y="232" width="520" height="14"/>
-        <rect x="118" y="0" width="14" height="300"/><rect x="296" y="0" width="14" height="300"/><rect x="470" y="0" width="14" height="190"/>
-      </g>
-      <g fill="none" stroke="#3a2a20" stroke-width="1" opacity=".75">
+      <!-- Fondo: mapa real (CSS .map, assets/images/mapa-fondo.png). El SVG queda transparente y solo dibuja las capas de encima. -->
+      <g fill="none" stroke="#3a2a20" stroke-width="1" opacity=".5">
         <ellipse cx="610" cy="120" rx="55" ry="32"/><ellipse cx="610" cy="120" rx="115" ry="62"/>
         <ellipse cx="600" cy="120" rx="185" ry="95"/><ellipse cx="590" cy="120" rx="270" ry="135"/>
       </g>
-      <rect x="520" y="175" width="80" height="45" rx="6" fill="#dcebd9" opacity=".8"/>
-      <ellipse cx="330" cy="300" rx="110" ry="62" fill="#cfe5f7"/>
+      <rect x="520" y="175" width="80" height="45" rx="6" fill="#dcebd9" opacity=".7"/>
+      <ellipse cx="330" cy="300" rx="110" ry="62" fill="#cfe5f7" opacity=".6"/>
       <text x="330" y="286" font-size="11" text-anchor="middle" fill="#3a2418">Zona tsunami</text>
       <rect x="322" y="228" width="16" height="62" fill="#f4b183"/><text x="330" y="240" font-size="8" text-anchor="middle" fill="#3a2418">puente</text>
-      <path d="M640 0h160v75a12 12 0 0 1-12 12H652a12 12 0 0 1-12-12z" fill="#6b4a38"/><text x="720" y="42" font-size="11" text-anchor="middle" fill="#fff">Ladera</text>
+      <path d="M640 0h160v75a12 12 0 0 1-12 12H652a12 12 0 0 1-12-12z" fill="#6b4a38" opacity=".72"/><text x="720" y="42" font-size="11" text-anchor="middle" fill="#fff">Ladera</text>
       <rect x="548" y="190" width="24" height="16" rx="3" fill="#c9d8a8" stroke="#6b7f3a"/><text x="560" y="201" font-size="7" text-anchor="middle">Colegio</text>
       <rect x="222" y="205" width="26" height="16" rx="3" fill="#c9d8a8" stroke="#6b7f3a"/><text x="235" y="216" font-size="7" text-anchor="middle">Estadio</text>`;
     if (o.reports !== false) REPORT_PINS.forEach(p => { s += pinPath(p[0], p[1], '#e55a0c'); });
