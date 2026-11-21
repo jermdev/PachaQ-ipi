@@ -319,27 +319,50 @@
   /* ================= HU-025 · Formulario de contacto ================= */
   const form = $('#contact-form');
   if (form) {
+    const LABELS = { nombre: 'Nombre completo', correo: 'Correo electrónico', celular: 'Celular', distrito: 'Distrito de residencia', perfil: 'Perfil de usuario', mensaje: 'Mensaje o consulta' };
     const rules = {
       nombre: v => v.trim().split(/\s+/).filter(Boolean).length >= 2 || 'Ingresa tu nombre y apellido.',
       correo: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Ingresa un correo válido (ej. nombre@email.com).',
       celular: v => /^9\d{8}$/.test(v.replace(/\s/g, '')) || 'Ingresa un celular peruano de 9 dígitos que empiece con 9.',
       distrito: v => v.trim().length >= 3 || 'Ingresa tu distrito de residencia.',
-      perfil: v => !!v || 'Selecciona tu perfil de usuario.'
+      perfil: v => !!v || 'Selecciona tu perfil de usuario.',
+      mensaje: v => v.trim().length >= 10 || 'Escribe tu consulta (mínimo 10 caracteres).'
     };
+    const keys = Object.keys(rules);
+    /* Valida un campo: vacío -> "obligatorio"; si no, aplica su regla. Marca el error junto al campo (CA-04). */
     const check = k => {
-      const inp = form.elements[k], r = rules[k](inp.value), box = $('#err-' + k);
-      inp.classList.toggle('err', r !== true); box.textContent = r === true ? '' : r; return r === true;
+      const inp = form.elements[k], box = $('#err-' + k);
+      const r = inp.value.trim() === '' ? `El campo «${LABELS[k]}» es obligatorio.` : rules[k](inp.value);
+      inp.classList.toggle('err', r !== true);
+      inp.setAttribute('aria-invalid', r === true ? 'false' : 'true');
+      inp.setAttribute('aria-describedby', 'err-' + k);
+      box.textContent = r === true ? '' : r;
+      return r === true;
     };
-    Object.keys(rules).forEach(k => form.elements[k].addEventListener('blur', () => check(k)));
+    keys.forEach(k => {
+      const inp = form.elements[k];
+      /* Validación en tiempo real (CA-02): al salir del campo y, una vez tocado, mientras se escribe. */
+      inp.addEventListener('blur', () => { inp.dataset.touched = '1'; check(k); });
+      inp.addEventListener('input', () => { if (inp.dataset.touched) check(k); });
+      inp.addEventListener('change', () => { inp.dataset.touched = '1'; check(k); });
+    });
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const ok = Object.keys(rules).map(check).every(Boolean);
       const msg = $('#form-msg');
-      if (!ok) { msg.className = 'alert danger'; msg.textContent = 'Revisa los campos marcados: todos son obligatorios.'; return; }
-      const data = {}; Object.keys(rules).forEach(k => { data[k] = form.elements[k].value.trim(); }); data.fecha = new Date().toISOString();
+      keys.forEach(k => { form.elements[k].dataset.touched = '1'; });
+      const invalid = keys.filter(k => !check(k));
+      if (invalid.length) {
+        msg.className = 'alert danger';
+        msg.textContent = 'Revisa los campos marcados: todos son obligatorios.';
+        form.elements[invalid[0]].focus(); /* posiciona el foco en el primer campo faltante */
+        return;
+      }
+      const data = {}; keys.forEach(k => { data[k] = form.elements[k].value.trim(); }); data.fecha = new Date().toISOString();
       try { const l = JSON.parse(localStorage.getItem('pachaqipi_consultas') || '[]'); l.push(data); localStorage.setItem('pachaqipi_consultas', JSON.stringify(l)); } catch (_) { /* sin storage */ }
-      msg.className = 'alert ok'; msg.textContent = `¡Gracias, ${data.nombre.split(' ')[0]}! Recibimos tu solicitud y te contactaremos pronto.`;
+      msg.className = 'alert ok';
+      msg.textContent = `¡Gracias, ${data.nombre.split(' ')[0]}! Recibimos tu solicitud. Te escribiremos al correo ${data.correo} con los siguientes pasos y la orientación sobre PachaQ'ipi.`;
       form.reset();
+      keys.forEach(k => { const i = form.elements[k]; delete i.dataset.touched; i.classList.remove('err'); i.setAttribute('aria-invalid', 'false'); });
     });
   }
 
