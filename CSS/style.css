@@ -177,7 +177,7 @@ a { color: inherit; text-decoration: none; }
 #plan-print { display: none; }
 
 /* ----- Mapa SVG ----- */
-.map { width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #ede5d8; }
+.map { width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #ede5d8 url('../assets/images/mapa-fondo.png') center / cover no-repeat; }
 .map svg { display: block; width: 100%; height: auto; }
 .map .pin-member { cursor: pointer; }
 
